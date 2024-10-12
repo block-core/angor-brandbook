@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angor Brand Book</title>
+    <style>
+      /* Brand colors */
+      :root {
+        --very-dark-teal: #022229;
+        --dark-cyan: #086c81;
+        --light-steel-green: #cbdde1;
+        --white: #ffffff;
+      }
+
+      /* General Styles */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--light-steel-green);
+        color: var(--very-dark-teal);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: var(--dark-cyan);
+        color: var(--white);
+        text-align: center;
+        padding: 50px 20px;
+        margin-bottom: 40px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 3em;
+        letter-spacing: 2px;
+      }
+
+      header p {
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+      main{
+        padding: 20px;
+      }
+      section {
+        margin: 20px;
+        background: var(--white);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        position: relative;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h2 {
+        color: var(--dark-cyan);
+        border-bottom: 2px solid var(--very-dark-teal);
+        padding-bottom: 10px;
+      }
+
+      /* Styles for the table of contents */
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      ul li {
+        margin-bottom: 15px; /* Add more space between items */
+      }
+
+      ul li a {
+        font-size: 1.2em;
+        color: var(--very-dark-teal);
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: var(--light-steel-green);
+        display: block;
+        margin-bottom: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      ul li a:hover {
+        background-color: var(--dark-cyan);
+        color: var(--white);
+      }
+
+      /* Box layout styles */
+      .box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .box div {
+        flex: 1;
+        min-width: 250px;
+        margin: 20px 10px;
+        padding: 20px;
+        background-color: var(--light-steel-green);
+        border: 2px solid var(--dark-cyan);
+        border-radius: 8px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      img {
+        max-width: 256px;
+        height: auto;
+        border-radius: 4px;
+        filter: drop-shadow(
+          0 4px 16px rgba(0, 0, 0, 0.2)
+        ); /* Apply shadow only to visible parts of the PNG */
+      }
+
+      /* Proper space between images and download links */
+      a {
+        text-decoration: none;
+        color: var(--dark-cyan);
+        font-weight: bold;
+        display: block;
+        margin-top: 15px;
+        transition: color 0.3s ease;
+        text-align: left;
+      }
+
+      a:hover {
+        color: var(--very-dark-teal);
+      }
+
+      @media (max-width: 768px) {
+        .box {
+          flex-direction: column;
+        }
+
+        header h1 {
+          font-size: 2.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🌟 Angor Brand Book</h1>
+      <p>
+        Ensuring consistent and professional representation of Angor across all
+        media
+      </p>
+    </header>
+    <main>
+      <section>
+        <h2>📚 Table of Contents</h2>
+        <ul>
+          <li><a href="#brand-overview">Brand Overview</a></li>
+          <li><a href="#logos">Logos</a></li>
+          <li><a href="#icons">Icons</a></li>
+          <li><a href="#color-palette">Color Palette</a></li>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#visual-guidelines">Visual Guidelines</a></li>
+          <li><a href="#brand-applications">Brand Applications</a></li>
+          <li><a href="#legal-and-compliance">Legal and Compliance</a></li>
+        </ul>
+      </section>
+
+      <section id="brand-overview">
+        <h2>1. Brand Overview</h2>
+        <p>
+          Angor is committed to providing a secure, transparent, and
+          decentralized crowdfunding platform, allowing investors to manage
+          their funds safely and founders to access a trustless funding
+          solution.
+        </p>
+      </section>
+
+      <section id="logos">
+        <h2>2. Logos</h2>
+        <div class="box">
+          <div>
+            <h3>Dark Logo 256px</h3>
+            <img
+              src="assets/logos/angor-logo-text-dark-256.png"
+              alt="Dark Logo 256px"
+            />
+            <a href="assets/logos/angor-logo-text-dark-256.png">Download</a>
+          </div>
+          <div>
+            <h3>Dark Logo 512px</h3>
+            <img
+              src="assets/logos/angor-logo-text-dark-512.png"
+              alt="Dark Logo 512px"
+            />
+            <a href="assets/logos/angor-logo-text-dark-512.png">Download</a>
+          </div>
+          <div>
+            <h3>Dark Logo 1024px</h3>
+            <img
+              src="assets/logos/angor-logo-text-dark-1024.png"
+              alt="Dark Logo 1024px"
+            />
+            <a href="assets/logos/angor-logo-text-dark-1024.png">Download</a>
+          </div>
+          <div>
+            <h3>Dark Logo 2048px</h3>
+            <img
+              src="assets/logos/angor-logo-text-dark-2048.png"
+              alt="Dark Logo 2048px"
+            />
+            <a href="assets/logos/angor-logo-text-dark-2048.png">Download</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div>
+            <h3>Light Logo 256px</h3>
+            <img
+              src="assets/logos/angor-logo-text-light-256.png"
+              alt="Light Logo 256px"
+            />
+            <a href="assets/logos/angor-logo-text-light-256.png">Download</a>
+          </div>
+          <div>
+            <h3>Light Logo 512px</h3>
+            <img
+              src="assets/logos/angor-logo-text-light-512.png"
+              alt="Light Logo 512px"
+            />
+            <a href="assets/logos/angor-logo-text-light-512.png">Download</a>
+          </div>
+          <div>
+            <h3>Light Logo 1024px</h3>
+            <img
+              src="assets/logos/angor-logo-text-light-1024.png"
+              alt="Light Logo 1024px"
+            />
+            <a href="assets/logos/angor-logo-text-light-1024.png">Download</a>
+          </div>
+          <div>
+            <h3>Light Logo 2048px</h3>
+            <img
+              src="assets/logos/angor-logo-text-light-2048.png"
+              alt="Light Logo 2048px"
+            />
+            <a href="assets/logos/angor-logo-text-light-2048.png">Download</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div>
+            <h3>Dark Vector Logo (SVG)</h3>
+            <a href="assets/logos/angor-logo-text-dark.svg">Download</a>
+          </div>
+          <div>
+            <h3>Light Vector Logo (SVG)</h3>
+            <a href="assets/logos/angor-logo-text-light.svg">Download</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="icons">
+        <h2>3. Icons</h2>
+        <div class="box">
+          <div>
+            <h3>App Icon Dark</h3>
+            <img
+              src="assets/icons/app/angor-app-icon-dark.png"
+              alt="App Icon Dark"
+            />
+            <a href="assets/icons/app/angor-app-icon-dark.png">Download</a>
+          </div>
+          <div>
+            <h3>App Icon Light</h3>
+            <img
+              src="assets/icons/app/angor-app-icon-light.png"
+              alt="App Icon Light"
+            />
+            <a href="assets/icons/app/angor-app-icon-light.png">Download</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div>
+            <h3>Favicon Dark</h3>
+            <img
+              src="assets/icons/ico/angor-favicon-dark.ico"
+              alt="Favicon Dark"
+              width="32px"
+            />
+            <a href="assets/icons/ico/angor-favicon-dark.ico">Download</a>
+          </div>
+          <div>
+            <h3>Favicon Light</h3>
+            <img
+              src="assets/icons/ico/angor-favicon-light.ico"
+              alt="Favicon Light"
+              width="32px"
+            />
+            <a href="assets/icons/ico/angor-favicon-light.ico">Download</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div>
+            <h3>Original Icon 256px Light</h3>
+            <img
+              src="assets/icons/original/angor-256-light.png"
+              alt="Original Icon 256px Light"
+            />
+            <a href="assets/icons/original/angor-256-light.png">Download</a>
+          </div>
+          <div>
+            <h3>Original Icon 512px Light</h3>
+            <img
+              src="assets/icons/original/angor-512-light.png"
+              alt="Original Icon 512px Light"
+            />
+            <a href="assets/icons/original/angor-512-light.png">Download</a>
+          </div>
+          <div>
+            <h3>Original Icon 1024px Light</h3>
+            <img
+              src="assets/icons/original/angor-1024-light.png"
+              alt="Original Icon 1024px Light"
+            />
+            <a href="assets/icons/original/angor-1024-light.png">Download</a>
+          </div>
+          <div>
+            <h3>Original Icon 2048px Light</h3>
+            <img
+              src="assets/icons/original/angor-2048-light.png"
+              alt="Original Icon 2048px Light"
+            />
+            <a href="assets/icons/original/angor-2048-light.png">Download</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="color-palette">
+        <h2>4. 🎨 Color Palette</h2>
+        <div class="box">
+          <div>
+            <h3>Very Dark Teal</h3>
+            <img src="assets/colors/022229.png" alt="Very Dark Teal" />
+            <p>#022229</p>
+          </div>
+          <div>
+            <h3>Dark Cyan</h3>
+            <img src="assets/colors/086c81.png" alt="Dark Cyan" />
+            <p>#086c81</p>
+          </div>
+          <div>
+            <h3>Light Steel Green</h3>
+            <img src="assets/colors/cbdde1.png" alt="Light Steel Green" />
+            <p>#cbdde1</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="typography">
+        <h2>5. ✏️ Typography</h2>
+        <p>
+          The **Inter** font family is used for all branding materials, ensuring
+          a modern, clean, and readable look across digital and print media.
+        </p>
+        <a href="assets/fonts/angor-inter-variablefont_opsz,wght.ttf"
+          >Download Inter Regular</a
+        >
+        <a href="assets/fonts/angor-inter-italic-variablefont_opsz,wght.ttf"
+          >Download Inter Italic</a
+        >
+        <div class="box">
+          <div>
+            <h3>Typography Example</h3>
+            <img
+              src="assets/fonts/angor-typography.png"
+              alt="Typography Example"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="visual-guidelines">
+        <h2>6. 🎯 Visual Guidelines</h2>
+        <p>
+          Guidelines for maintaining consistency in logo, color, and typography
+          usage.
+        </p>
+        <ul>
+          <li>Maintain clear space around the logo to ensure it stands out.</li>
+          <li>Do not stretch, rotate, or alter the proportions of the logo.</li>
+          <li>
+            Use the appropriate dark or light version depending on the
+            background color.
+          </li>
+        </ul>
+      </section>
+
+      <section id="brand-applications">
+        <h2>7. 📄 Brand Applications</h2>
+        <p>
+          Guidelines for consistent use of the Angor brand across different
+          platforms.
+        </p>
+      </section>
+
+      <section id="legal-and-compliance">
+        <h2>8. 📜 Legal and Compliance</h2>
+        <p>
+          Ensure compliance with Angor’s intellectual property and trademark
+          guidelines.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
