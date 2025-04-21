@@ -461,6 +461,165 @@
           height: 40px;
         }
       }
+
+      /* Additional styles for new sections */
+      .subsection {
+        margin-bottom: 40px;
+      }
+      
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+      
+      .value-item {
+        background-color: var(--gray-100);
+        border-radius: var(--border-radius-md);
+        padding: 20px;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition-normal);
+      }
+      
+      .value-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+      
+      .value-item h4 {
+        color: var(--dark-cyan);
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      
+      .tone-examples {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+      
+      .tone-example {
+        background-color: var(--gray-100);
+        border-radius: var(--border-radius-md);
+        padding: 20px;
+        box-shadow: var(--shadow-sm);
+      }
+      
+      .example-box {
+        background-color: white;
+        border-radius: var(--border-radius-sm);
+        padding: 15px;
+        margin-top: 15px;
+        border: 1px solid var(--gray-200);
+      }
+      
+      .ui-examples {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        margin: 20px 0;
+      }
+      
+      .ui-example {
+        background-color: var(--gray-100);
+        border-radius: var(--border-radius-md);
+        padding: 20px;
+        box-shadow: var(--shadow-sm);
+      }
+      
+      .ui-button {
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        border-radius: var(--border-radius-sm);
+        padding: 10px 20px;
+        transition: var(--transition-normal);
+        margin: 10px 0;
+        display: inline-block;
+      }
+      
+      .ui-button.primary {
+        background-color: var(--dark-cyan);
+        color: white;
+        border: none;
+      }
+      
+      .ui-button.primary:hover {
+        background-color: var(--very-dark-teal);
+      }
+      
+      .ui-button.secondary {
+        background-color: transparent;
+        color: var(--dark-cyan);
+        border: 1px solid var(--dark-cyan);
+      }
+      
+      .ui-button.secondary:hover {
+        background-color: var(--gray-200);
+      }
+      
+      .ui-button.disabled {
+        background-color: var(--gray-200);
+        color: var(--gray-300);
+        border: none;
+        cursor: not-allowed;
+      }
+      
+      .ui-input, .ui-select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--gray-300);
+        border-radius: var(--border-radius-sm);
+        font-family: "Inter", sans-serif;
+        margin: 10px 0;
+      }
+      
+      .code-snippet {
+        background-color: var(--very-dark-teal);
+        color: white;
+        border-radius: var(--border-radius-sm);
+        padding: 15px;
+        margin: 10px 0;
+        font-family: monospace;
+        font-size: 0.9em;
+        overflow-x: auto;
+      }
+      
+      .code-snippet pre {
+        margin: 0;
+      }
+      
+      .contrast-examples {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+      
+      .download-btn {
+        text-decoration: none;
+        color: var(--dark-cyan);
+        font-weight: 500;
+        padding: 10px 20px;
+        border-radius: var(--border-radius-sm);
+        background-color: var(--gray-100);
+        transition: var(--transition-normal);
+        display: inline-block;
+        margin-top: 10px;
+      }
+      
+      .download-btn:hover {
+        background-color: var(--dark-cyan);
+        color: var(--white);
+      }
+      
+      @media (max-width: 768px) {
+        .values-grid, .tone-examples, .ui-examples, .contrast-examples {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
@@ -476,13 +635,19 @@
         <h2>📚 Table of Contents</h2>
         <ul class="toc">
           <li><a href="#brand-overview">1. Brand Overview</a></li>
-          <li><a href="#logos">2. Logos</a></li>
-          <li><a href="#icons">3. Icons</a></li>
-          <li><a href="#color-palette">4. Color Palette</a></li>
-          <li><a href="#typography">5. Typography</a></li>
-          <li><a href="#visual-guidelines">6. Visual Guidelines</a></li>
-          <li><a href="#brand-applications">7. Brand Applications</a></li>
-          <li><a href="#legal-and-compliance">8. Legal and Compliance</a></li>
+          <li><a href="#brand-mission">2. Brand Mission & Values</a></li>
+          <li><a href="#logos">3. Logos</a></li>
+          <li><a href="#icons">4. Icons</a></li>
+          <li><a href="#color-palette">5. Color Palette</a></li>
+          <li><a href="#typography">6. Typography</a></li>
+          <li><a href="#photography">7. Photography Style</a></li>
+          <li><a href="#brand-voice">8. Brand Voice & Tone</a></li>
+          <li><a href="#visual-guidelines">9. Visual Guidelines</a></li>
+          <li><a href="#digital-assets">10. Digital Assets</a></li>
+          <li><a href="#ui-elements">11. UI Elements</a></li>
+          <li><a href="#accessibility">12. Accessibility Guidelines</a></li>
+          <li><a href="#brand-applications">13. Brand Applications</a></li>
+          <li><a href="#legal-and-compliance">14. Legal and Compliance</a></li>
         </ul>
       </section>
 
@@ -495,9 +660,52 @@
           solution.
         </p>
       </section>
+      
+      <section id="brand-mission">
+        <h2>2. 🚀 Brand Mission & Values</h2>
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Mission</h3>
+          <p>Angor's mission is to revolutionize crowdfunding through decentralized blockchain technology, empowering creators and investors with transparent, trustless funding solutions that eliminate intermediaries and reduce barriers to innovation.</p>
+        </div>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Vision</h3>
+          <p>We envision a world where funding creative and innovative projects is accessible to all, free from traditional financial gatekeepers, and built on the principles of transparency, security, and community ownership.</p>
+        </div>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Core Values</h3>
+          <div class="values-grid">
+            <div class="value-item">
+              <h4>Transparency</h4>
+              <p>We believe in complete openness in all operations, enabled by blockchain technology.</p>
+            </div>
+            <div class="value-item">
+              <h4>Security</h4>
+              <p>We prioritize the safety of user funds and data through robust technological solutions.</p>
+            </div>
+            <div class="value-item">
+              <h4>Decentralization</h4>
+              <p>We are committed to reducing central points of control and empowering our community.</p>
+            </div>
+            <div class="value-item">
+              <h4>Innovation</h4>
+              <p>We continuously explore new technological solutions to improve the crowdfunding experience.</p>
+            </div>
+            <div class="value-item">
+              <h4>Accessibility</h4>
+              <p>We strive to make our platform usable by everyone, regardless of technical expertise.</p>
+            </div>
+            <div class="value-item">
+              <h4>Community</h4>
+              <p>We foster connections between creators and backers to build lasting relationships.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="logos">
-        <h2>2. Logos</h2>
+        <h2>3. Logos</h2>
         <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Dark Theme Logos</h3>
         <div class="box">
           <div class="item">
@@ -594,7 +802,7 @@
       </section>
 
       <section id="icons">
-        <h2>3. Icons</h2>
+        <h2>4. Icons</h2>
         <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Application Icons</h3>
         <div class="box">
           <div class="item">
@@ -681,7 +889,7 @@
       </section>
 
       <section id="color-palette">
-        <h2>4. 🎨 Color Palette <button id="copy-all-colors" class="copy-btn" title="Copy all color codes">📋</button></h2>
+        <h2>5. 🎨 Color Palette <button id="copy-all-colors" class="copy-btn" title="Copy all color codes">📋</button></h2>
         <div class="box">
           <div class="item">
             <h3>Very Dark Teal</h3>
@@ -702,7 +910,7 @@
       </section>
 
       <section id="typography">
-        <h2>5. ✏️ Typography</h2>
+        <h2>6. ✏️ Typography</h2>
         <div class="typography-container">
           <p>
             The <strong>Inter</strong> font family is used for all branding materials, ensuring
@@ -726,9 +934,95 @@
           </div>
         </div>
       </section>
+      
+      <section id="photography">
+        <h2>7. 📷 Photography Style</h2>
+        <p>The photography style for Angor should reflect our brand values of transparency, innovation, and accessibility while maintaining a professional and clean aesthetic.</p>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Style Guidelines</h3>
+          <ul class="guidelines-list">
+            <li>Use high-quality images with clear, sharp focus and good lighting</li>
+            <li>Prefer images with a modern, tech-oriented feel that relates to blockchain, finance, or innovation</li>
+            <li>Choose images with a balanced color palette that complements our brand colors</li>
+            <li>When featuring people, ensure diversity and authentic representations</li>
+            <li>Avoid overly processed, artificial-looking images or cliché stock photos</li>
+          </ul>
+        </div>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Photo Treatments</h3>
+          <p>When needed, apply subtle treatment to images to maintain consistency:</p>
+          <div class="box">
+            <div class="item">
+              <h3>Original Image</h3>
+              <div class="placeholder-img" style="background: var(--light-steel-green); height: 200px; width: 100%; display: flex; align-items: center; justify-content: center;">Example Image</div>
+            </div>
+            <div class="item">
+              <h3>With Brand Overlay</h3>
+              <div class="placeholder-img" style="background: linear-gradient(rgba(8, 108, 129, 0.3), rgba(2, 34, 41, 0.3)), var(--light-steel-green); height: 200px; width: 100%; display: flex; align-items: center; justify-content: center; color: white;">Example with Overlay</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="brand-voice">
+        <h2>8. 🗣️ Brand Voice & Tone</h2>
+        <p>The Angor brand voice helps establish a consistent personality across all communications, reflecting our values and connecting with our audience.</p>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Voice Characteristics</h3>
+          <div class="values-grid">
+            <div class="value-item">
+              <h4>Knowledgeable</h4>
+              <p>We communicate with expertise and authority on blockchain technology without being condescending.</p>
+            </div>
+            <div class="value-item">
+              <h4>Accessible</h4>
+              <p>We explain complex concepts in simple terms, avoiding unnecessary jargon.</p>
+            </div>
+            <div class="value-item">
+              <h4>Trustworthy</h4>
+              <p>We are straightforward and honest, focusing on facts and transparency.</p>
+            </div>
+            <div class="value-item">
+              <h4>Forward-thinking</h4>
+              <p>We express excitement about innovation and the future possibilities of technology.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Tone Guidelines</h3>
+          <p>Our tone can adjust based on the context while maintaining our core voice:</p>
+          <div class="tone-examples">
+            <div class="tone-example">
+              <h4>Marketing & Website</h4>
+              <p>Confident and inspiring, highlighting benefits and possibilities</p>
+              <div class="example-box">
+                <p><strong>Example:</strong> "Angor empowers creators with trustless funding solutions, removing barriers and unlocking new possibilities."</p>
+              </div>
+            </div>
+            <div class="tone-example">
+              <h4>Technical Documentation</h4>
+              <p>Clear and precise, focusing on accuracy and helpful guidance</p>
+              <div class="example-box">
+                <p><strong>Example:</strong> "Connect your wallet by clicking the 'Connect' button in the top-right corner and selecting your preferred wallet provider."</p>
+              </div>
+            </div>
+            <div class="tone-example">
+              <h4>Community Engagement</h4>
+              <p>Conversational and responsive, showing genuine interest in user feedback</p>
+              <div class="example-box">
+                <p><strong>Example:</strong> "Thanks for sharing your experience! We're looking into this issue and will update everyone once we have a solution."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="visual-guidelines">
-        <h2>6. 🎯 Visual Guidelines</h2>
+        <h2>9. 🎯 Visual Guidelines</h2>
         <p>
           Guidelines for maintaining consistency in logo, color, and typography
           usage.
@@ -744,9 +1038,190 @@
           <li>Minimum font size for web: 16px. Minimum size for print: 12pt.</li>
         </ul>
       </section>
+      
+      <section id="digital-assets">
+        <h2>10. 💾 Digital Assets</h2>
+        <p>Standard templates and digital assets ensure consistent branding across all communication channels.</p>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Email Signatures</h3>
+          <div class="example-box" style="background: white; padding: 20px; border: 1px solid var(--gray-200);">
+            <p><strong>Name Surname</strong><br>
+            Position Title<br>
+            <span style="color: var(--dark-cyan);">Angor</span><br>
+            email@angor.io<br>
+            <a href="https://angor.io" style="color: var(--dark-cyan);">angor.io</a></p>
+            <div style="margin-top: 10px; height: 2px; width: 200px; background: linear-gradient(90deg, var(--dark-cyan), var(--light-steel-green));"></div>
+          </div>
+          <a href="#" class="download-btn" style="margin-top: 20px; display: inline-block;">Download Email Signature Template</a>
+        </div>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Presentation Templates</h3>
+          <div class="box">
+            <div class="item">
+              <h3>PowerPoint Template</h3>
+              <div class="placeholder-img" style="background: var(--white); border: 1px solid var(--gray-200); height: 150px; width: 100%; display: flex; align-items: center; justify-content: center; position: relative;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 20px; background: var(--dark-cyan);"></div>
+                <div style="margin-top: 10px;">Angor Presentation</div>
+              </div>
+              <a href="#" class="download-btn">Download Template</a>
+            </div>
+            <div class="item">
+              <h3>Google Slides Template</h3>
+              <div class="placeholder-img" style="background: var(--white); border: 1px solid var(--gray-200); height: 150px; width: 100%; display: flex; align-items: center; justify-content: center; position: relative;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 20px; background: var(--dark-cyan);"></div>
+                <div style="margin-top: 10px;">Angor Presentation</div>
+              </div>
+              <a href="#" class="download-btn">Download Template</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Social Media Templates</h3>
+          <div class="box">
+            <div class="item">
+              <h3>Twitter/X Header</h3>
+              <div class="placeholder-img" style="background: linear-gradient(135deg, var(--dark-cyan), var(--very-dark-teal)); height: 100px; width: 100%; display: flex; align-items: center; justify-content: center; color: white;">Angor Twitter Header</div>
+              <a href="#" class="download-btn">Download Template</a>
+            </div>
+            <div class="item">
+              <h3>LinkedIn Banner</h3>
+              <div class="placeholder-img" style="background: linear-gradient(135deg, var(--dark-cyan), var(--very-dark-teal)); height: 100px; width: 100%; display: flex; align-items: center; justify-content: center; color: white;">Angor LinkedIn Banner</div>
+              <a href="#" class="download-btn">Download Template</a>
+            </div>
+            <div class="item">
+              <h3>Instagram Post</h3>
+              <div class="placeholder-img" style="background: linear-gradient(135deg, var(--dark-cyan), var(--very-dark-teal)); height: 150px; width: 150px; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: white;">Instagram</div>
+              <a href="#" class="download-btn">Download Template</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="ui-elements">
+        <h2>11. 🖥️ UI Elements</h2>
+        <p>Standard user interface elements ensure a consistent experience across all digital platforms.</p>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Buttons</h3>
+          <div class="ui-examples">
+            <div class="ui-example">
+              <h4>Primary Button</h4>
+              <button class="ui-button primary">Primary Action</button>
+              <div class="code-snippet">
+                <pre><code>background-color: var(--dark-cyan);
+color: white;
+padding: 10px 20px;
+border-radius: var(--border-radius-sm);
+border: none;</code></pre>
+              </div>
+            </div>
+            <div class="ui-example">
+              <h4>Secondary Button</h4>
+              <button class="ui-button secondary">Secondary Action</button>
+              <div class="code-snippet">
+                <pre><code>background-color: transparent;
+color: var(--dark-cyan);
+padding: 9px 19px;
+border-radius: var(--border-radius-sm);
+border: 1px solid var(--dark-cyan);</code></pre>
+              </div>
+            </div>
+            <div class="ui-example">
+              <h4>Disabled Button</h4>
+              <button class="ui-button disabled" disabled>Disabled</button>
+              <div class="code-snippet">
+                <pre><code>background-color: var(--gray-200);
+color: var(--gray-300);
+padding: 10px 20px;
+border-radius: var(--border-radius-sm);
+border: none;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Form Elements</h3>
+          <div class="ui-examples">
+            <div class="ui-example">
+              <h4>Text Input</h4>
+              <input type="text" class="ui-input" placeholder="Enter text...">
+              <div class="code-snippet">
+                <pre><code>padding: 10px;
+border: 1px solid var(--gray-300);
+border-radius: var(--border-radius-sm);
+width: 100%;</code></pre>
+              </div>
+            </div>
+            <div class="ui-example">
+              <h4>Dropdown Select</h4>
+              <select class="ui-select">
+                <option>Select an option</option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+              </select>
+              <div class="code-snippet">
+                <pre><code>padding: 10px;
+border: 1px solid var(--gray-300);
+border-radius: var(--border-radius-sm);
+background-color: white;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="accessibility">
+        <h2>12. ♿ Accessibility Guidelines</h2>
+        <p>Angor is committed to creating products and communications that are accessible to everyone, including people with disabilities.</p>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Color Contrast</h3>
+          <p>All text must have sufficient contrast with its background to ensure readability.</p>
+          <ul class="guidelines-list">
+            <li>Normal text must have a contrast ratio of at least 4.5:1 against its background</li>
+            <li>Large text (18pt or 14pt bold) must have a contrast ratio of at least 3:1</li>
+            <li>UI components and graphical objects must have a contrast ratio of at least 3:1</li>
+          </ul>
+          <div class="contrast-examples">
+            <div class="contrast-good">
+              <p style="background-color: var(--very-dark-teal); color: white; padding: 10px; border-radius: var(--border-radius-sm);">Good contrast: White text on very dark teal</p>
+            </div>
+            <div class="contrast-good">
+              <p style="background-color: white; color: var(--very-dark-teal); padding: 10px; border-radius: var(--border-radius-sm); border: 1px solid var(--gray-200);">Good contrast: Very dark teal text on white</p>
+            </div>
+            <div class="contrast-bad">
+              <p style="background-color: var(--light-steel-green); color: white; padding: 10px; border-radius: var(--border-radius-sm);">Poor contrast: White text on light steel green</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Text Alternatives</h3>
+          <p>Provide text alternatives for all non-text content:</p>
+          <ul class="guidelines-list">
+            <li>All images must include descriptive alt text</li>
+            <li>Videos should include captions and audio descriptions when necessary</li>
+            <li>Icons should have descriptive labels or aria-labels</li>
+          </ul>
+        </div>
+        
+        <div class="subsection">
+          <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Keyboard Navigation</h3>
+          <p>All functionality must be available via keyboard:</p>
+          <ul class="guidelines-list">
+            <li>Ensure all interactive elements can be accessed and operated with keyboard only</li>
+            <li>Maintain logical tab order that follows the visual layout</li>
+            <li>Provide visible focus indicators for all interactive elements</li>
+          </ul>
+        </div>
+      </section>
 
       <section id="brand-applications">
-        <h2>7. 📄 Brand Applications</h2>
+        <h2>13. 📄 Brand Applications</h2>
         <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Website</h3>
         <p>
           Ensure consistency in applying logos, colors, and typography across all pages.
@@ -767,7 +1242,7 @@
       </section>
 
       <section id="legal-and-compliance">
-        <h2>8. 📜 Legal and Compliance</h2>
+        <h2>14. 📜 Legal and Compliance</h2>
         <p>
           The Angor logo and brand elements must not be altered in any way.
           Ensure compliance with Angor's intellectual property and trademark guidelines.
