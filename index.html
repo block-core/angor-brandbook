@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Angor Brand Book</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/icons/ico/angor-favicon-dark.ico" type="image/x-icon">
     <style>
       /* Brand colors */
       :root {
@@ -11,136 +15,450 @@
         --dark-cyan: #086c81;
         --light-steel-green: #cbdde1;
         --white: #ffffff;
+        --gray-100: #f8f9fa;
+        --gray-200: #e9ecef;
+        --gray-300: #dee2e6;
+        --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+        --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+        --shadow-lg: 0 10px 15px rgba(2,34,41,0.1);
+        --transition-normal: all 0.3s ease;
+        --border-radius-sm: 6px;
+        --border-radius-md: 10px;
+        --border-radius-lg: 16px;
       }
 
       /* General Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
       body {
         font-family: "Inter", sans-serif;
-        background-color: var(--light-steel-green);
+        background-color: var(--gray-100);
         color: var(--very-dark-teal);
         margin: 0;
         padding: 0;
-        line-height: 1.6;
+        line-height: 1.7;
+        font-weight: 400;
+        overflow-x: hidden;
       }
 
+      /* Header Styles */
       header {
-        background-color: var(--dark-cyan);
+        background: linear-gradient(135deg, var(--dark-cyan), var(--very-dark-teal));
         color: var(--white);
         text-align: center;
-        padding: 50px 20px;
+        padding: 80px 20px;
         margin-bottom: 40px;
+        position: relative;
+        box-shadow: var(--shadow-lg);
+      }
+
+      header:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,0L100,100" stroke="rgba(255,255,255,0.03)" stroke-width="1"/><path d="M100,0L0,100" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></svg>');
+        opacity: 0.4;
       }
 
       header h1 {
         margin: 0;
-        font-size: 3em;
-        letter-spacing: 2px;
+        font-size: 4em;
+        font-weight: 700;
+        letter-spacing: 1px;
+        position: relative;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
       }
 
       header p {
-        font-size: 1.2em;
-        margin-top: 10px;
-      }
-      main{
-        padding: 20px;
-      }
-      section {
-        margin: 20px;
-        background: var(--white);
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        position: relative;
-        max-width: 1200px;
+        font-size: 1.4em;
+        margin-top: 16px;
+        max-width: 600px;
         margin-left: auto;
         margin-right: auto;
+        font-weight: 300;
+        opacity: 0.95;
+        position: relative;
+      }
+
+      /* Main Content */
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
+      }
+
+      section {
+        margin: 40px auto;
+        background: var(--white);
+        padding: 40px;
+        border-radius: var(--border-radius-lg);
+        box-shadow: var(--shadow-md);
+        position: relative;
+        overflow: hidden;
+        transition: var(--transition-normal);
+      }
+
+      section:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-2px);
       }
 
       h2 {
         color: var(--dark-cyan);
-        border-bottom: 2px solid var(--very-dark-teal);
-        padding-bottom: 10px;
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+        font-weight: 600;
+        font-size: 2.2em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
 
-      /* Styles for the table of contents */
-      ul {
+      h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 60px;
+        background: linear-gradient(90deg, var(--dark-cyan), var(--light-steel-green));
+        border-radius: 10px;
+      }
+
+      /* Table of contents */
+      .toc {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
         list-style-type: none;
         padding: 0;
-        margin: 0;
+        margin: 20px 0;
       }
 
-      ul li {
-        margin-bottom: 15px; /* Add more space between items */
-      }
-
-      ul li a {
-        font-size: 1.2em;
+      .toc li a {
+        display: flex;
+        align-items: center;
+        font-size: 1.1em;
         color: var(--very-dark-teal);
         text-decoration: none;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: var(--light-steel-green);
-        display: block;
-        margin-bottom: 5px;
-        transition: background-color 0.3s ease;
+        padding: 20px;
+        border-radius: var(--border-radius-md);
+        background-color: var(--gray-100);
+        transition: var(--transition-normal);
+        border: 1px solid var(--gray-200);
+        box-shadow: var(--shadow-sm);
+        font-weight: 500;
+        height: 100%;
       }
 
-      ul li a:hover {
+      .toc li a:hover {
+        background-color: var(--white);
+        color: var(--dark-cyan);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--light-steel-green);
+      }
+
+      /* Box layout */
+      .box {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        margin: 30px 0;
+      }
+
+      .item {
+        background-color: var(--white);
+        border-radius: var(--border-radius-md);
+        padding: 30px;
+        transition: var(--transition-normal);
+        border: 1px solid var(--gray-200);
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--light-steel-green);
+      }
+
+      .item h3 {
+        color: var(--dark-cyan);
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: var(--border-radius-sm);
+        transition: var(--transition-normal);
+        filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+      }
+
+      .item:hover img {
+        transform: scale(1.02);
+        filter: drop-shadow(0 8px 16px rgba(0,0,0,0.15));
+      }
+
+      .item a {
+        text-decoration: none;
+        color: var(--dark-cyan);
+        font-weight: 500;
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-radius: var(--border-radius-sm);
+        background-color: var(--gray-100);
+        transition: var(--transition-normal);
+        display: inline-block;
+      }
+
+      .item a:hover {
         background-color: var(--dark-cyan);
         color: var(--white);
       }
 
-      /* Box layout styles */
-      .box {
+      .item p {
+        margin: 15px 0;
+        font-size: 1.1em;
+      }
+
+      /* Typography section */
+      .typography-container {
         display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .typography-links {
+        display: flex;
+        gap: 15px;
         flex-wrap: wrap;
-        justify-content: space-between;
+        margin-bottom: 20px;
       }
 
-      .box div {
-        flex: 1;
-        min-width: 250px;
-        margin: 20px 10px;
-        padding: 20px;
-        background-color: var(--light-steel-green);
-        border: 2px solid var(--dark-cyan);
-        border-radius: 8px;
-        text-align: center;
-        position: relative;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      img {
-        max-width: 256px;
-        height: auto;
-        border-radius: 4px;
-        filter: drop-shadow(
-          0 4px 16px rgba(0, 0, 0, 0.2)
-        ); /* Apply shadow only to visible parts of the PNG */
-      }
-
-      /* Proper space between images and download links */
-      a {
+      .typography-links a {
         text-decoration: none;
         color: var(--dark-cyan);
-        font-weight: bold;
-        display: block;
-        margin-top: 15px;
-        transition: color 0.3s ease;
-        text-align: left;
+        font-weight: 500;
+        padding: 12px 20px;
+        border-radius: var(--border-radius-sm);
+        background-color: var(--gray-100);
+        transition: var(--transition-normal);
+        display: inline-block;
       }
 
-      a:hover {
-        color: var(--very-dark-teal);
+      .typography-links a:hover {
+        background-color: var(--dark-cyan);
+        color: var(--white);
+      }
+
+      /* Guidelines section */
+      .guidelines-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .guidelines-list li {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--gray-200);
+        position: relative;
+        padding-left: 30px;
+      }
+
+      .guidelines-list li:last-child {
+        border-bottom: none;
+      }
+
+      .guidelines-list li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--dark-cyan);
+        font-size: 1.5em;
+        line-height: 1;
+      }
+
+      /* Back to top button */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: var(--dark-cyan);
+        color: var(--white);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 1.5em;
+        box-shadow: var(--shadow-md);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-normal);
+        z-index: 1000;
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background-color: var(--very-dark-teal);
+        transform: translateY(-5px);
+      }
+
+      /* Color Copy Button Styles */
+      .copy-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        transition: transform 0.2s;
+        margin-left: auto;
+        padding: 5px 10px;
+      }
+      
+      .copy-btn:hover {
+        transform: scale(1.2);
+      }
+      
+      .copy-color-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+        vertical-align: middle;
+        transition: transform 0.2s;
+        margin-left: 5px;
+      }
+      
+      .copy-color-btn:hover {
+        transform: scale(1.2);
+      }
+      
+      .color-code {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* Copy success feedback */
+      .copy-feedback {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--dark-cyan);
+        color: var(--white);
+        padding: 12px 24px;
+        border-radius: var(--border-radius-md);
+        box-shadow: var(--shadow-md);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+        z-index: 1010;
+      }
+      
+      .copy-feedback.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Media Queries */
+      @media (max-width: 1200px) {
+        header h1 {
+          font-size: 3.5em;
+        }
+        
+        section {
+          padding: 30px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        header {
+          padding: 60px 20px;
+        }
+        
+        header h1 {
+          font-size: 3em;
+        }
+        
+        h2 {
+          font-size: 2em;
+        }
       }
 
       @media (max-width: 768px) {
-        .box {
-          flex-direction: column;
-        }
-
         header h1 {
           font-size: 2.5em;
+        }
+        
+        header p {
+          font-size: 1.2em;
+        }
+        
+        section {
+          padding: 25px;
+          margin: 30px auto;
+        }
+        
+        .box {
+          gap: 20px;
+        }
+        
+        .item {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        header {
+          padding: 50px 15px;
+        }
+        
+        header h1 {
+          font-size: 2.2em;
+        }
+        
+        section {
+          padding: 20px;
+          border-radius: var(--border-radius-md);
+        }
+        
+        h2 {
+          font-size: 1.7em;
+        }
+        
+        .item h3 {
+          font-size: 1.2em;
+        }
+        
+        .back-to-top {
+          bottom: 20px;
+          right: 20px;
+          width: 40px;
+          height: 40px;
         }
       }
     </style>
@@ -154,17 +472,17 @@
       </p>
     </header>
     <main>
-      <section>
+      <section id="table-of-contents">
         <h2>📚 Table of Contents</h2>
-        <ul>
-          <li><a href="#brand-overview">Brand Overview</a></li>
-          <li><a href="#logos">Logos</a></li>
-          <li><a href="#icons">Icons</a></li>
-          <li><a href="#color-palette">Color Palette</a></li>
-          <li><a href="#typography">Typography</a></li>
-          <li><a href="#visual-guidelines">Visual Guidelines</a></li>
-          <li><a href="#brand-applications">Brand Applications</a></li>
-          <li><a href="#legal-and-compliance">Legal and Compliance</a></li>
+        <ul class="toc">
+          <li><a href="#brand-overview">1. Brand Overview</a></li>
+          <li><a href="#logos">2. Logos</a></li>
+          <li><a href="#icons">3. Icons</a></li>
+          <li><a href="#color-palette">4. Color Palette</a></li>
+          <li><a href="#typography">5. Typography</a></li>
+          <li><a href="#visual-guidelines">6. Visual Guidelines</a></li>
+          <li><a href="#brand-applications">7. Brand Applications</a></li>
+          <li><a href="#legal-and-compliance">8. Legal and Compliance</a></li>
         </ul>
       </section>
 
@@ -180,206 +498,231 @@
 
       <section id="logos">
         <h2>2. Logos</h2>
+        <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Dark Theme Logos</h3>
         <div class="box">
-          <div>
+          <div class="item">
             <h3>Dark Logo 256px</h3>
             <img
               src="assets/logos/angor-logo-text-dark-256.png"
               alt="Dark Logo 256px"
             />
-            <a href="assets/logos/angor-logo-text-dark-256.png">Download</a>
+            <a href="assets/logos/angor-logo-text-dark-256.png" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>Dark Logo 512px</h3>
             <img
               src="assets/logos/angor-logo-text-dark-512.png"
               alt="Dark Logo 512px"
             />
-            <a href="assets/logos/angor-logo-text-dark-512.png">Download</a>
+            <a href="assets/logos/angor-logo-text-dark-512.png" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>Dark Logo 1024px</h3>
             <img
               src="assets/logos/angor-logo-text-dark-1024.png"
               alt="Dark Logo 1024px"
             />
-            <a href="assets/logos/angor-logo-text-dark-1024.png">Download</a>
+            <a href="assets/logos/angor-logo-text-dark-1024.png" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>Dark Logo 2048px</h3>
             <img
               src="assets/logos/angor-logo-text-dark-2048.png"
               alt="Dark Logo 2048px"
             />
-            <a href="assets/logos/angor-logo-text-dark-2048.png">Download</a>
+            <a href="assets/logos/angor-logo-text-dark-2048.png" download>Download</a>
           </div>
         </div>
 
+        <h3 style="margin: 40px 0 20px; color: var(--very-dark-teal);">Light Theme Logos</h3>
         <div class="box">
-          <div>
+          <div class="item">
             <h3>Light Logo 256px</h3>
             <img
               src="assets/logos/angor-logo-text-light-256.png"
               alt="Light Logo 256px"
             />
-            <a href="assets/logos/angor-logo-text-light-256.png">Download</a>
+            <a href="assets/logos/angor-logo-text-light-256.png" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>Light Logo 512px</h3>
             <img
               src="assets/logos/angor-logo-text-light-512.png"
               alt="Light Logo 512px"
             />
-            <a href="assets/logos/angor-logo-text-light-512.png">Download</a>
+            <a href="assets/logos/angor-logo-text-light-512.png" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>Light Logo 1024px</h3>
             <img
               src="assets/logos/angor-logo-text-light-1024.png"
               alt="Light Logo 1024px"
             />
-            <a href="assets/logos/angor-logo-text-light-1024.png">Download</a>
+            <a href="assets/logos/angor-logo-text-light-1024.png" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>Light Logo 2048px</h3>
             <img
               src="assets/logos/angor-logo-text-light-2048.png"
               alt="Light Logo 2048px"
             />
-            <a href="assets/logos/angor-logo-text-light-2048.png">Download</a>
+            <a href="assets/logos/angor-logo-text-light-2048.png" download>Download</a>
           </div>
         </div>
 
+        <h3 style="margin: 40px 0 20px; color: var(--very-dark-teal);">Vector Logos</h3>
         <div class="box">
-          <div>
+          <div class="item">
             <h3>Dark Vector Logo (SVG)</h3>
-            <a href="assets/logos/angor-logo-text-dark.svg">Download</a>
+            <img
+              src="assets/logos/angor-logo-text-dark.svg"
+              alt="Dark Vector Logo"
+              style="max-height: 150px"
+            />
+            <a href="assets/logos/angor-logo-text-dark.svg" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>Light Vector Logo (SVG)</h3>
-            <a href="assets/logos/angor-logo-text-light.svg">Download</a>
+            <img
+              src="assets/logos/angor-logo-text-light.svg"
+              alt="Light Vector Logo"
+              style="max-height: 150px"
+            />
+            <a href="assets/logos/angor-logo-text-light.svg" download>Download</a>
           </div>
         </div>
       </section>
 
       <section id="icons">
         <h2>3. Icons</h2>
+        <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Application Icons</h3>
         <div class="box">
-          <div>
+          <div class="item">
             <h3>App Icon Dark</h3>
             <img
               src="assets/icons/app/angor-app-icon-dark.png"
               alt="App Icon Dark"
+              style="max-width: 128px"
             />
-            <a href="assets/icons/app/angor-app-icon-dark.png">Download</a>
+            <a href="assets/icons/app/angor-app-icon-dark.png" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>App Icon Light</h3>
             <img
               src="assets/icons/app/angor-app-icon-light.png"
               alt="App Icon Light"
+              style="max-width: 128px"
             />
-            <a href="assets/icons/app/angor-app-icon-light.png">Download</a>
+            <a href="assets/icons/app/angor-app-icon-light.png" download>Download</a>
           </div>
         </div>
 
+        <h3 style="margin: 40px 0 20px; color: var(--very-dark-teal);">Favicons</h3>
         <div class="box">
-          <div>
+          <div class="item">
             <h3>Favicon Dark</h3>
             <img
               src="assets/icons/ico/angor-favicon-dark.ico"
               alt="Favicon Dark"
-              width="32px"
+              style="max-width: 64px"
             />
-            <a href="assets/icons/ico/angor-favicon-dark.ico">Download</a>
+            <a href="assets/icons/ico/angor-favicon-dark.ico" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>Favicon Light</h3>
             <img
               src="assets/icons/ico/angor-favicon-light.ico"
               alt="Favicon Light"
-              width="32px"
+              style="max-width: 64px"
             />
-            <a href="assets/icons/ico/angor-favicon-light.ico">Download</a>
+            <a href="assets/icons/ico/angor-favicon-light.ico" download>Download</a>
           </div>
         </div>
 
+        <h3 style="margin: 40px 0 20px; color: var(--very-dark-teal);">Original Icons</h3>
         <div class="box">
-          <div>
+          <div class="item">
             <h3>Original Icon 256px Light</h3>
             <img
               src="assets/icons/original/angor-256-light.png"
               alt="Original Icon 256px Light"
+              style="max-width: 128px"
             />
-            <a href="assets/icons/original/angor-256-light.png">Download</a>
+            <a href="assets/icons/original/angor-256-light.png" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>Original Icon 512px Light</h3>
             <img
               src="assets/icons/original/angor-512-light.png"
               alt="Original Icon 512px Light"
+              style="max-width: 128px"
             />
-            <a href="assets/icons/original/angor-512-light.png">Download</a>
+            <a href="assets/icons/original/angor-512-light.png" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>Original Icon 1024px Light</h3>
             <img
               src="assets/icons/original/angor-1024-light.png"
               alt="Original Icon 1024px Light"
+              style="max-width: 128px"
             />
-            <a href="assets/icons/original/angor-1024-light.png">Download</a>
+            <a href="assets/icons/original/angor-1024-light.png" download>Download</a>
           </div>
-          <div>
+          <div class="item">
             <h3>Original Icon 2048px Light</h3>
             <img
               src="assets/icons/original/angor-2048-light.png"
               alt="Original Icon 2048px Light"
+              style="max-width: 128px"
             />
-            <a href="assets/icons/original/angor-2048-light.png">Download</a>
+            <a href="assets/icons/original/angor-2048-light.png" download>Download</a>
           </div>
         </div>
       </section>
 
       <section id="color-palette">
-        <h2>4. 🎨 Color Palette</h2>
+        <h2>4. 🎨 Color Palette <button id="copy-all-colors" class="copy-btn" title="Copy all color codes">📋</button></h2>
         <div class="box">
-          <div>
+          <div class="item">
             <h3>Very Dark Teal</h3>
-            <img src="assets/colors/022229.png" alt="Very Dark Teal" />
-            <p>#022229</p>
+            <img src="assets/colors/022229.png" alt="Very Dark Teal" style="max-width: 150px; height: 150px; border-radius: 10px;" />
+            <p class="color-code">#022229 <button class="copy-color-btn" data-color="#022229" title="Copy color code">📋</button></p>
           </div>
-          <div>
+          <div class="item">
             <h3>Dark Cyan</h3>
-            <img src="assets/colors/086c81.png" alt="Dark Cyan" />
-            <p>#086c81</p>
+            <img src="assets/colors/086c81.png" alt="Dark Cyan" style="max-width: 150px; height: 150px; border-radius: 10px;" />
+            <p class="color-code">#086c81 <button class="copy-color-btn" data-color="#086c81" title="Copy color code">📋</button></p>
           </div>
-          <div>
+          <div class="item">
             <h3>Light Steel Green</h3>
-            <img src="assets/colors/cbdde1.png" alt="Light Steel Green" />
-            <p>#cbdde1</p>
+            <img src="assets/colors/cbdde1.png" alt="Light Steel Green" style="max-width: 150px; height: 150px; border-radius: 10px;" />
+            <p class="color-code">#cbdde1 <button class="copy-color-btn" data-color="#cbdde1" title="Copy color code">📋</button></p>
           </div>
         </div>
       </section>
 
       <section id="typography">
         <h2>5. ✏️ Typography</h2>
-        <p>
-          The **Inter** font family is used for all branding materials, ensuring
-          a modern, clean, and readable look across digital and print media.
-        </p>
-        <a href="assets/fonts/angor-inter-variablefont_opsz,wght.ttf"
-          >Download Inter Regular</a
-        >
-        <a href="assets/fonts/angor-inter-italic-variablefont_opsz,wght.ttf"
-          >Download Inter Italic</a
-        >
-        <div class="box">
-          <div>
-            <h3>Typography Example</h3>
-            <img
-              src="assets/fonts/angor-typography.png"
-              alt="Typography Example"
-            />
+        <div class="typography-container">
+          <p>
+            The <strong>Inter</strong> font family is used for all branding materials, ensuring
+            a modern, clean, and readable look across digital and print media.
+          </p>
+          
+          <div class="typography-links">
+            <a href="assets/fonts/angor-inter-variablefont_opsz,wght.ttf" download>Download Inter Regular</a>
+            <a href="assets/fonts/angor-inter-italic-variablefont_opsz,wght.ttf" download>Download Inter Italic</a>
+          </div>
+          
+          <div class="box">
+            <div class="item" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto;">
+              <h3>Typography Example</h3>
+              <img
+                src="assets/fonts/angor-typography.png"
+                alt="Typography Example"
+                style="max-width: 100%"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -390,31 +733,140 @@
           Guidelines for maintaining consistency in logo, color, and typography
           usage.
         </p>
-        <ul>
+        <ul class="guidelines-list">
           <li>Maintain clear space around the logo to ensure it stands out.</li>
           <li>Do not stretch, rotate, or alter the proportions of the logo.</li>
-          <li>
-            Use the appropriate dark or light version depending on the
-            background color.
-          </li>
+          <li>Use the appropriate dark or light version depending on the background color.</li>
+          <li>Use <strong>Very Dark Teal</strong> as the main background or for large sections.</li>
+          <li>Use <strong>Dark Cyan</strong> for highlights, buttons, and interactive elements.</li>
+          <li>Use <strong>Light Steel Green</strong> for text or background highlights.</li>
+          <li>Use <strong>Inter</strong> for headings and body text to ensure consistency.</li>
+          <li>Minimum font size for web: 16px. Minimum size for print: 12pt.</li>
         </ul>
       </section>
 
       <section id="brand-applications">
         <h2>7. 📄 Brand Applications</h2>
+        <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Website</h3>
         <p>
-          Guidelines for consistent use of the Angor brand across different
-          platforms.
+          Ensure consistency in applying logos, colors, and typography across all pages.
+          Navigation should be clear and user-friendly, following the brand's tone.
+        </p>
+        
+        <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Social Media</h3>
+        <p>
+          Use the square version of the logo for profile pictures and avatars.
+          Maintain the brand color palette and typography in promotional posts.
+        </p>
+        
+        <h3 style="margin: 20px 0; color: var(--very-dark-teal);">Marketing Materials</h3>
+        <p>
+          Apply logos, fonts, and colors as specified in all brochures, presentations, and advertisements.
+          Always use vector logos for print materials to ensure clarity.
         </p>
       </section>
 
       <section id="legal-and-compliance">
         <h2>8. 📜 Legal and Compliance</h2>
         <p>
-          Ensure compliance with Angor’s intellectual property and trademark
-          guidelines.
+          The Angor logo and brand elements must not be altered in any way.
+          Ensure compliance with Angor's intellectual property and trademark guidelines.
         </p>
       </section>
     </main>
+    
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+    
+    <script>
+      // Back to top button functionality
+      const backToTopButton = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+      
+      backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      
+      // Add smooth scrolling to all links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 20,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Color copy functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // Create feedback element
+        const feedback = document.createElement('div');
+        feedback.className = 'copy-feedback';
+        document.body.appendChild(feedback);
+        
+        // Copy all colors button
+        const copyAllBtn = document.getElementById('copy-all-colors');
+        copyAllBtn.addEventListener('click', function() {
+          const colors = [
+            { name: 'Very Dark Teal', code: '#022229' },
+            { name: 'Dark Cyan', code: '#086c81' },
+            { name: 'Light Steel Green', code: '#cbdde1' }
+          ];
+          
+          let colorText = 'Angor Brand Colors:\n\n';
+          colors.forEach(color => {
+            colorText += `${color.name}: ${color.code}\n`;
+          });
+          
+          copyToClipboard(colorText, 'All color codes copied!');
+        });
+        
+        // Copy individual colors
+        const copyColorBtns = document.querySelectorAll('.copy-color-btn');
+        copyColorBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const colorCode = this.getAttribute('data-color');
+            copyToClipboard(colorCode, `Color ${colorCode} copied!`);
+          });
+        });
+        
+        // Function to copy to clipboard and show feedback
+        function copyToClipboard(text, feedbackMessage) {
+          navigator.clipboard.writeText(text)
+            .then(() => {
+              feedback.textContent = feedbackMessage;
+              feedback.classList.add('show');
+              
+              setTimeout(() => {
+                feedback.classList.remove('show');
+              }, 2000);
+            })
+            .catch(err => {
+              console.error('Failed to copy text: ', err);
+              feedback.textContent = 'Failed to copy. Please try again.';
+              feedback.classList.add('show');
+              
+              setTimeout(() => {
+                feedback.classList.remove('show');
+              }, 2000);
+            });
+        }
+      });
+    </script>
   </body>
 </html>
